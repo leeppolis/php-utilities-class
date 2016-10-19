@@ -28,34 +28,34 @@ Given an HTTP code, sends the appropriate HTTP Header to the client. Defaults to
 Given an content type string, sends the appropriate HTTP Header to the client.
 Accepts one of the following:
 
- * `download`
- * `text`
- * `html`
- * `json`
+* `download`
+* `text`
+* `html`
+* `json`
  
  Defaults to `json`.
  
- ### Http::redirect
+### Http::redirect
  
  	@method mixed \SL\Utilities\Http::redirect( string $url [ , int $code, bool $die ] )
  	
 Given a url and an HTTP code, sends the Redirect Header to the client. `$code` and `$die` defaults respectively to `302` and `true`.
 
- * `$url` The URL of the destination page
- * `$code` The HTTP code (usually 302 or 301), defaults to 302
- * `$die` A boolean indicating if the current execution should end soon after the redirect, defaults to true
+* `$url` The URL of the destination page
+* `$code` The HTTP code (usually 302 or 301), defaults to 302
+* `$die` A boolean indicating if the current execution should end soon after the redirect, defaults to true
  
- ### Linkify::TwitterLinks
+### Linkify::TwitterLinks
  
  	@method string \SL\Utilities\Linkify::twitterLinks( string $text )
  	
 Given a the body of a tweet (or any other string), returns a string with all the entity converted to the appropriate HTML link.
  
- * `http[s]://` strings are converted to links to external pages
- * `@mentions` are converted to links to the appropriate Twitter profile
- * `#tags` are converted to links to the Twitter search page
+* `http[s]://` strings are converted to links to external pages
+* `@mentions` are converted to links to the appropriate Twitter profile
+* `#tags` are converted to links to the Twitter search page
  
- ### Linkify::hasLinks
+### Linkify::hasLinks
  
  	@method bool \SL\Utilities\Linkify::hasLinks( string $text )
  	
