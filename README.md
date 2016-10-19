@@ -51,7 +51,7 @@ Given a url and an HTTP code, sends the Redirect Header to the client. `$code` a
  	
 Given a the body of a tweet (or any other string), returns a string with all the entity converted to the appropriate HTML link.
  
-* `http[s]://` strings are converted to links to external pages
+* `://` strings are converted to links to external pages
 * `@mentions` are converted to links to the appropriate Twitter profile
 * `#tags` are converted to links to the Twitter search page
  
