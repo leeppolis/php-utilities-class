@@ -1,6 +1,7 @@
 # php-utilities-class
 
 A collection of PHP Classes that help taking care of simple tasks.
+The list of available methods will grow depending on my future needs.
 
 ## What's in the package
 
@@ -74,8 +75,14 @@ Given a string, returns the corresponding valid string that can be used as a slu
 
 ## How to use
 
-`include()` or `require()` the needed file, then call the static methods from your script.
- 
+`include()` or `require()` the needed file, then call the static methods from your script, remembering that they're namespaced `\SL\Utilities'.
+
+	$title = "A very long text containing spaces";
+	$slug = \SL\Utilities\Slugify::createSlug($title); 
+	echo $slug;
+	// prints out "a-very-long-text-containing-spaces"
+	
+	
 ## License
 
 The MIT License (MIT)
