@@ -32,7 +32,7 @@
  
 		public static function twitterLinks($text) {
 			//Convert urls to <a> links
-			$text = preg_replace("/([\w]+\:\/\/[\w-?&;#~=\.\/\@_]+[\w\/])/", "<a target=\"_blank\" href=\"$1\">$1</a>", $tweet);
+			$text = preg_replace("/([\w]+\:\/\/[\w\-?&;#~=\.\/\@_]+[\w\/])/", "<a target=\"_blank\" href=\"$1\">$1</a>", $tweet);
 			
 			//Convert hashtags to twitter searches in <a> links
 			$text = preg_replace("/#([A-Za-z0-9\/\._]*)/", "<a target=\"_blank\" href=\"http://twitter.com/search?q=$1\">#$1</a>", $tweet);
@@ -53,7 +53,7 @@
 		
 		public static function hasLinks($text) {
 			$output = false;
-			preg_match_all("/([\w]+\:\/\/[\w-?&;#~=\.\/\@_]+[\w\/])/i", $text, $matches);
+			preg_match_all("/([\w]+\:\/\/[\w\-?&;#~=\.\/\@_]+[\w\/])/i", $text, $matches);
 			$links = \SL\Utilities\Linkify::returnLinks($text);
 			if ( $links ) $output = true;
 			return $output;
@@ -69,7 +69,7 @@
 		
 		public static function returnLinks($text) {
 			$output = false;
-			preg_match_all("/([\w]+\:\/\/[\w-?&;#~=\.\/\@_]+[\w\/])/i", $text, $matches);
+			preg_match_all("/([\w]+\:\/\/[\w\-?&;#~=\.\/\@_]+[\w\/])/i", $text, $matches);
 			if ( is_array( $matches ) && count( $matches[0] ) > 0 ) {
 				$output = $matches[0];
 			}
